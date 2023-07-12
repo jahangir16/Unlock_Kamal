@@ -11,6 +11,9 @@ internal class Program
 
         builder.Services.AddControllers();
 
+        //Cross Origin Resource Sharing
+        builder.Services.AddCors();
+
         //Register DbContext
 
         builder.Services.AddDbContext<StoreContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -29,6 +32,12 @@ internal class Program
         }
 
         app.UseHttpsRedirection();
+
+        // middleware
+        app.UseCors(opt =>
+        {
+            opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+        });
 
         app.UseAuthorization();
 
