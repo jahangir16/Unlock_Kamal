@@ -1,4 +1,4 @@
-import { ListItem, ListItemAvatar, Avatar, ListItemText, Button, Card, CardActions, CardContent, CardMedia, Typography, CardHeader } from "@mui/material";
+import { Avatar, Button, Card, CardActions, CardContent, CardMedia, Typography, CardHeader } from "@mui/material";
 import { Product } from "../../app/models/product";
 import { Link } from "react-router-dom";
 
@@ -7,6 +7,7 @@ interface Props{
 }
 
 export default function ProductCard({product}:Props){
+
     return(
         <Card>
             <CardHeader

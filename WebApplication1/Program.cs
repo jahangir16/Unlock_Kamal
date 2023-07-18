@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Middleware;
 
 internal class Program
 {
@@ -25,13 +26,15 @@ internal class Program
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
+        app.UseMiddleware<ExceptionMiddleware>();
+
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
+       // app.UseHttpsRedirection();
 
         // middleware
         app.UseCors(opt =>

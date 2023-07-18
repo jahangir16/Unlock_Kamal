@@ -3,14 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {  BrowserRouter } from 'react-router-dom';
+// import { createBrowserHistory } from 'history';
+// import { useHistory } from 'react-router-dom';
+// import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+// import {history} from './app/api/history';
+// import { history } from './app/api/history';
+// import { HistoryRouter } from "./app/api/HistoryRouter"
+// import { myHistory } from "./app/api/history"
+// export const history = useHistory();
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter >
        <App />
     </BrowserRouter>
   
