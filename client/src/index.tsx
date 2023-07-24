@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import {  BrowserRouter } from 'react-router-dom';
+import {  BrowserRouter, RouterProvider } from 'react-router-dom';
+import { router } from './router/Routes';
+// import { createHref, navigate } from 'react-router-dom';
 // import { createBrowserHistory } from 'history';
 // import { useHistory } from 'react-router-dom';
 // import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
@@ -12,6 +14,11 @@ import {  BrowserRouter } from 'react-router-dom';
 // import { HistoryRouter } from "./app/api/HistoryRouter"
 // import { myHistory } from "./app/api/history"
 // export const history = useHistory();
+// import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
+// import { history } from './app/api/history';
+// import axiosInterceptor from "./app/api/AxiosInterceptor";
+
+// axiosInterceptor(); // Call the axiosInterceptor function before rendering the app
 
 
 const root = ReactDOM.createRoot(
@@ -19,9 +26,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter >
+    {/* <BrowserRouter>
        <App />
-    </BrowserRouter>
+    </BrowserRouter> */}
+     <RouterProvider router={router} />
   
   </React.StrictMode>
 );
@@ -30,3 +38,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
