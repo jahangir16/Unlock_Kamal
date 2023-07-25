@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 const sleep = ()=> new Promise(resolve => setTimeout(resolve,500));
 
 axios.defaults.baseURL = "http://localhost:5017/api/";
+axios.defaults.withCredentials=true;
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -27,7 +28,7 @@ axios.interceptors.response.use(async response => {
     return response;
   },
   (error: AxiosError) => {
-    // const navigate = useNavigate();
+   
     
     const { data, status } = error.response as AxiosResponse;
     switch (status) {

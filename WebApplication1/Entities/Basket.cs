@@ -25,7 +25,7 @@ namespace WebApplication1.Entities
             
 
         }
-
+ 
         public void RemoveItem(int productId,int quantity)
         {
             var item=Items.FirstOrDefault(item=>item.ProductId == productId);

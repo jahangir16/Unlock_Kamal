@@ -53,6 +53,8 @@ import NotFound from "../app/errors/NotFound";
 import ServerError from "../app/errors/ServerError";
 import App from "../app/layout/App";
 import HomePage from "../features/home/HomePage";
+import BasketPage from "../features/basket/BasketPage";
+import CheakoutPage from "../features/checkout/CheckOutPage";
 
 export const router = createBrowserRouter([{
   // Define routes as an array of RouteObject
@@ -69,7 +71,9 @@ export const router = createBrowserRouter([{
         { path: 'contact', element: <ContactPage /> },
         { path: 'server-error', element: <ServerError /> },
         { path: 'not-found', element: <NotFound /> },
-
+        {path:'/basket', element: <BasketPage />},
+        {path:'/checkout', element: <CheakoutPage />},
+        
         // Catch-all route to handle unmatched routes
         { path: '*', element: <NotFound /> }
       ]

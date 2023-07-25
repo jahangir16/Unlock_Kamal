@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './app/layout/styles.css';
-import App from './app/layout/App';
+// import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import {  BrowserRouter, RouterProvider } from 'react-router-dom';
+import {  RouterProvider } from 'react-router-dom';
 import { router } from './router/Routes';
+import { StoreProvider } from './app/context/StoreContext';
 // import { createHref, navigate } from 'react-router-dom';
 // import { createBrowserHistory } from 'history';
 // import { useHistory } from 'react-router-dom';
@@ -29,8 +30,9 @@ root.render(
     {/* <BrowserRouter>
        <App />
     </BrowserRouter> */}
+    <StoreProvider>
      <RouterProvider router={router} />
-  
+     </StoreProvider>
   </React.StrictMode>
 );
 
