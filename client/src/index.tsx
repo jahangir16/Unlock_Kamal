@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {  RouterProvider } from 'react-router-dom';
 import { router } from './router/Routes';
 import { StoreProvider } from './app/context/StoreContext';
+import { configureStore } from './app/store/ConfigureStore';
+import { Provider } from 'react-redux';
 // import { createHref, navigate } from 'react-router-dom';
 // import { createBrowserHistory } from 'history';
 // import { useHistory } from 'react-router-dom';
@@ -21,6 +23,8 @@ import { StoreProvider } from './app/context/StoreContext';
 
 // axiosInterceptor(); // Call the axiosInterceptor function before rendering the app
 
+const store = configureStore();
+// console.log(store.getState());
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,9 +34,11 @@ root.render(
     {/* <BrowserRouter>
        <App />
     </BrowserRouter> */}
-    <StoreProvider>
-     <RouterProvider router={router} />
-     </StoreProvider>
+       <StoreProvider>
+           <Provider store={store}>
+                 <RouterProvider router={router} />
+            </Provider>
+        </StoreProvider>
   </React.StrictMode>
 );
 

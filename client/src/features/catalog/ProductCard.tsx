@@ -3,7 +3,7 @@ import { Product } from "../../app/models/product";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import agent from "../../app/api/agent";
-import LoadingButton from "@mui/lab/LoadingButton/LoadingButton";
+import LoadingButton from "@mui/lab/LoadingButton";
 import { useStoreContext } from '../../app/context/StoreContext';
 import { currencyFormat } from '../../app/util/util';
 // import { LoadingButton } from "@mui/lab";

@@ -3,7 +3,7 @@ import { Divider, Grid, Table, TableCell, TableContainer, TableRow, TextField, T
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../../app/models/product";
-import LoadingButton from "@mui/lab/LoadingButton/LoadingButton";
+import LoadingButton from "@mui/lab/LoadingButton";
 import agent from "../../app/api/agent";
 import NotFound from "../../app/errors/NotFound";
 import LoadingComponent from "../../app/layout/LoadingComponent";
