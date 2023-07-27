@@ -6,3 +6,6 @@ export function getCookie(key: string) {
 export function currencyFormat(amount: number) {
   return 'Rs' + (amount).toFixed(2);
 }
+// export function currencyFormat(amount: number) {
+//   return amount.toFixed(2).toString(); // Format with 2 decimal places and convert to string
+// }
