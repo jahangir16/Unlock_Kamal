@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using WebApplication1.Data;
 using WebApplication1.Entities;
 using WebApplication1.Extensions;
+using WebApplication1.RequestHelpers;
 
 namespace WebApplication1.Controllers
 {
@@ -16,17 +18,18 @@ namespace WebApplication1.Controllers
             _context = context;
         }
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts(string orderBy = null,
-            string searchTerm = null , string brand =null , string types = null)
+        public async Task<ActionResult<PagedList<Product>>> GetProducts(ProductsPrams productsPrams)
+        /*      public async Task<ActionResult<List<Product>>> GetProducts(string orderBy = null,
+                  string searchTerm = null , string brand =null , string types = null)*/
         {
             // here i made it async so it will wait untill result is found
             /*var products = await _context.Products.ToListAsync();
             return Ok(products);*/
 
             var querry = _context.Products
-                .Sort(orderBy)
-                .Search(searchTerm)
-                .Filter(brand, types)
+                .Sort(productsPrams.OrderBy)
+                .Search(productsPrams.SearchTerm)
+                .Filter(productsPrams.Brands, productsPrams.Types)
                 .AsQueryable();
 
             /*querry = orderBy switch
@@ -36,7 +39,14 @@ namespace WebApplication1.Controllers
                 _ => querry.OrderBy(p => p.Name)
             };*/
 
-            return await querry.ToListAsync();
+            /*return await querry.ToListAsync();*/
+
+            var product = await PagedList<Product>.ToPagedList(querry, productsPrams.PageNumber,
+                productsPrams._PageSize);
+
+            Response.Headers.Add("Pagination",JsonSerializer.Serialize(product.MetaData));
+            return product;
+
          }
 
         [HttpGet("{id}")]
