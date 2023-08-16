@@ -34,6 +34,87 @@ namespace WebApplication1.Data
                     Type = "Boots",
                     QuantityInStock = 100
                 },
+                new Product
+                {
+                    Name =" Name",
+                    Description ="Product Description",
+                    Price=500,
+                   PictureUrl = "/images/products/sb-ang1.png",
+                    Brand = "Angular",
+                    Type = "hats",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Apple Boots",
+                    Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+                    Price = 15000,
+                    PictureUrl = "/images/products/boot-ang2.png",
+                    Brand = "Apple",
+                    Type = "boots",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name ="Samsung A32",
+                    Description ="Product Description",
+                    Price=500,
+                   PictureUrl = "/images/products/sb-ang1.png",
+                    Brand = "Samsung",
+                    Type = "Mobile",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "MacBook Air M2 ",
+                    Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+                    Price = 15000,
+                    PictureUrl = "/images/products/boot-ang2.png",
+                    Brand = "Apple",
+                    Type = "Laptop",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name ="MacBook Air M1",
+                    Description ="Product Description",
+                    Price=500,
+                   PictureUrl = "/images/products/sb-ang1.png",
+                    Brand = "Apple",
+                    Type = "laptop",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
+                    Name = "Mac Studio M1",
+                    Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+                    Price = 15000,
+                    PictureUrl = "/images/products/boot-ang2.png",
+                    Brand = "Apple",
+                    Type = "Desktop",
+                    QuantityInStock = 100
+                },
+                  new Product
+                {
+                    Name = "Mac Studio M2 Ultra",
+                    Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+                    Price = 15000,
+                    PictureUrl = "/images/products/boot-ang2.png",
+                    Brand = "Apple",
+                    Type = "Desktop",
+                    QuantityInStock = 100
+                },
+                    new Product
+                {
+                    Name = "MacBookPro",
+                    Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+                    Price = 15000,
+                    PictureUrl = "/images/products/boot-ang2.png",
+                    Brand = "Apple",
+                    Type = "Laptop",
+                    QuantityInStock = 100
+                },
+
             };
               foreach (var product in products)
             {

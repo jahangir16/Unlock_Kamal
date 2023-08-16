@@ -16,7 +16,8 @@ namespace WebApplication1.Controllers
             _context = context;
         }
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts(string orderBy = null, string searchTerm = null)
+        public async Task<ActionResult<List<Product>>> GetProducts(string orderBy = null,
+            string searchTerm = null , string brand =null , string types = null)
         {
             // here i made it async so it will wait untill result is found
             /*var products = await _context.Products.ToListAsync();
@@ -25,6 +26,7 @@ namespace WebApplication1.Controllers
             var querry = _context.Products
                 .Sort(orderBy)
                 .Search(searchTerm)
+                .Filter(brand, types)
                 .AsQueryable();
 
             /*querry = orderBy switch
